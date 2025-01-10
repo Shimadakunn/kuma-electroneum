@@ -43,7 +43,7 @@ export function Chart() {
   useEffect(() => {
     const initialDelay = 0;
     const animationDuration = 4000;
-    const steps = 60;
+    const steps = 244;
     const stepDuration = animationDuration / steps;
     let currentStep = 0;
 
