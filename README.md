@@ -4,6 +4,8 @@
 <p align="center">Kuma is an ERC-4337 Smart Wallet controlled with WebAuthn</a></p>
 </div>
 
+<a href="https://kuma-hedera.vercel.app/" target="_blank" style="font-size: 32px;">Demo Site</a>
+
 # Pain Point
 
 Wallets on Electroneum Blockchain are all EOA and are not shaped to onboard the next 1 billions users.
@@ -24,11 +26,42 @@ It allows users to create a wallet on the blockchain with a web2 experience.
 
 ### Contracts
 
-This folder contains the smart contracts of the wallet.
+The smart contracts are based on the [ERC-4337 standard](https://github.com/eth-infinitism/account-abstraction).
 
-### Kuma File
+The implementation of the WebAuthn signature verification is based on the [Daimo](https://github.com/daimo-eth/p256-verifier) implementation.
 
-This folder contains the app.
+The bundler is based on the [Alchemy Rundler](https://github.com/alchemyplatform/rundler).
+
+#### Setup
+
+```bash
+git submodule update --init --recursive
+cd contracts
+cp .env.example .env
+```
+
+Then setup the `.env` file with the correct values.
+
+```bash
+source deploy/[contract].sh
+```
+
+### kuma
+
+```bash
+cd kuma
+pnpm i
+cp .env.example .env
+```
+
+Then setup the `.env` file with the correct values.
+
+- NEXT_PUBLIC_RELAYER_PRIVATE_KEY: Private key of wallet that deploy the user wallet
+- NEXT_PUBLIC_BUNDLER_API_KEY: API key of the Alchemy bundler node
+
+```bash
+pnpm dev
+```
 
 # Smart Contracts
 
@@ -56,9 +89,7 @@ This folder contains the app.
 0xd0a0dccc866b650a2db92434bc3ded773f417d2e
 ```
 
-# [Demo Site](https://kuma-hedera.vercel.app/)
-
-# Project Summary
+# Docs
 
 Onboarding new users into blockchain applications is a challenge. Current solutions revolves around mnemonics that need to be stored to recover accounts on users wallets, effectively introducing security risks. By using passkeys to control accounts, we abstract away the need for users to store mnemonics and we allow users to use a familiar interface to control their accounts (biometric authentication) in one click UX.
 
