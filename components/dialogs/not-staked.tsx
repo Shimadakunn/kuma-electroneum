@@ -29,7 +29,7 @@ export function NotStaked() {
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
-  const { me, balances, updateBalances, received } = useMe();
+  const { me, balances, updateBalances, received, balance } = useMe();
 
   useEffect(() => {
     if (received) {
@@ -100,7 +100,7 @@ export function NotStaked() {
         {!isLoading && success === null && (
           <>
             <AlertDialogHeader>
-              <AlertDialogTitle>You have received {balances.balance} USD</AlertDialogTitle>
+              <AlertDialogTitle>You have received {balance} USD</AlertDialogTitle>
             </AlertDialogHeader>
             <AlertDialogDescription>
               Please click on the button below to start earning interest.

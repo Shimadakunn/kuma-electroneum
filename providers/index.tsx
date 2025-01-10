@@ -27,6 +27,7 @@ function useMeHook() {
   const [isMounted, setIsMounted] = useState(false);
   const [balances, setBalances] = useState<Balances>({ balance: '0', stakedBalance: '0' });
   const [received, setReceived] = useState(false);
+  const [balance, setBalance] = useState(2.76);
 
   function disconnect() {
     localStorage.removeItem('kuma.me');
@@ -150,6 +151,7 @@ function useMeHook() {
     disconnect,
     updateBalances,
     received,
+    balance,
   };
 }
 
