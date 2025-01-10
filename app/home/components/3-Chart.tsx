@@ -63,16 +63,9 @@ export function Chart() {
       }
     };
 
-    let timeoutId: NodeJS.Timeout;
     if (received) {
       animate();
     }
-
-    return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
   }, [received]);
 
   return (
