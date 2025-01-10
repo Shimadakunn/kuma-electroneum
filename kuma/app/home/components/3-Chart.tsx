@@ -15,18 +15,18 @@ const initialChartData = [
   { month: 'January', balance: 1 },
   { month: 'February', balance: 1 },
   { month: 'March', balance: 1 },
-  { month: 'April', balance: 1.8 },
-  { month: 'May', balance: 1.85 },
-  { month: 'June', balance: 1.9 },
+  { month: 'April', balance: 1 },
+  { month: 'May', balance: 1 },
+  { month: 'June', balance: 1 },
 ];
 
 const targetChartData = [
-  { month: 'January', balance: 11.5 },
-  { month: 'February', balance: 11.7 },
-  { month: 'March', balance: 12.5 },
-  { month: 'April', balance: 13.2 },
-  { month: 'May', balance: 14 },
-  { month: 'June', balance: 15 },
+  { month: 'January', balance: 1 },
+  { month: 'February', balance: 1 },
+  { month: 'March', balance: 1 },
+  { month: 'April', balance: 1.8 },
+  { month: 'May', balance: 1.85 },
+  { month: 'June', balance: 1.9 },
 ];
 
 const chartConfig = {
@@ -41,9 +41,9 @@ export function Chart() {
   const [chartData, setChartData] = useState(initialChartData);
 
   useEffect(() => {
-    const initialDelay = 2000; // 2 second delay
-    const animationDuration = 10000; // 10 seconds
-    const steps = 60; // 60 frames for smooth animation
+    const initialDelay = 0;
+    const animationDuration = 4000;
+    const steps = 60;
     const stepDuration = animationDuration / steps;
     let currentStep = 0;
 
@@ -66,14 +66,14 @@ export function Chart() {
 
     // Cleanup timeout on unmount or when period changes
     return () => clearTimeout(timeoutId);
-  }, [period]); // Restart animation when period changes
+  }, []); // Restart animation when period changes
 
   return (
     <div className="flex h-[35vh] flex-col items-center justify-center ">
       <ChartContainer config={chartConfig} className="h-full w-full">
         <AreaChart
           accessibilityLayer
-          data={initialChartData}
+          data={chartData}
           margin={{
             top: 4,
           }}>

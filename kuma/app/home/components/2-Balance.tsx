@@ -6,7 +6,7 @@ import { Anybody } from 'next/font/google';
 const anybody = Anybody({ subsets: ['latin'] });
 
 export function Balance() {
-  const { balances, received } = useMe();
+  const { balances } = useMe();
 
   const totalBalance = parseFloat(balances.balance) + parseFloat(balances.stakedBalance);
 
