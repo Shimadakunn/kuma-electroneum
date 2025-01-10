@@ -34,8 +34,6 @@ kuma/.vercel
 # typescript
 kuma/*.tsbuildinfo
 kuma/next-env.d.ts
-kuma/pnpm-lock.yaml
-kuma/public/sw.js
 
 # Foundry
 contracts/cache/

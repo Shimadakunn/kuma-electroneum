@@ -1,24 +1,45 @@
 <div align="center">
 <img src="https://kuma-hedera.vercel.app/favicon.ico" width="100"/>
-<h1 align="center" style="margin-bottom: 0">ERC-4337 Smart Wallet controlled with Passkeys</h1>
-<p align="center">An All-in-one App that let you abstract all the difficulties of the blockchain</a></p>
+<h1 align="center" style="margin-bottom: 0">KUMA</h1>
+<p align="center">Kuma is an ERC-4337 Smart Wallet controlled with WebAuthn</a></p>
 </div>
 
+# Pain Point
+
+Wallets on Electroneum Blockchain are all EOA and are not shaped to onboard the next 1 billions users.
+
+# Solution
+
+Kuma is the first ERC-4337 Smart Wallet on Electroneum Blockchain. \
+It allows users to create a wallet on the blockchain with a web2 experience.
+
+# Main Features
+
+- Passkey Signature with WebAuthn
+- Gasless Transactions
+- Transaction Batching
+- Wallet Recovery with Guardians
+
 # Smart Contracts
+
 ## Supported Chains
+
 - Hedera
 
 ## [EntryPoint](https://hashscan.io/testnet/contract/0.0.4755335)
+
 ```
 0x48d2642087dd86f86ed205ab204fd10a5cb076f8
 ```
 
 ## [Factory](https://hashscan.io/testnet/contract/0.0.4755395)
+
 ```
 0xc71a8181b63dcb39015e05391747d8de505f37ba
 ```
 
 ## [Paymaster](https://hashscan.io/testnet/contract/0.0.4755408)
+
 ```
 0xd0a0dccc866b650a2db92434bc3ded773f417d2e
 ```
@@ -66,7 +87,6 @@ The Smart Account is the contract implementing the ERC-4337 standard. Its addres
 </br>
 
 ![image](https://i.imgur.com/4PxmDaH.png)
-
 
 ## Onchain interactions via UserOperations
 
