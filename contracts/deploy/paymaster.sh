@@ -1,0 +1,4 @@
+export $(cat .env | xargs) && forge script DeployPaymaster \
+    --private-key $PRIVATE_KEY --rpc-url $RPC_URL \
+    --etherscan-api-key $EXPLORER_API_KEY \
+    --verify --slow --broadcast --via-ir
