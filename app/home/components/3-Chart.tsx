@@ -10,6 +10,8 @@ import {
   ChartTooltipContent,
 } from '@/components/ui/chart';
 import { cn } from '@/lib/utils';
+import { useMe } from '@/providers';
+import { setTimeout } from 'timers';
 
 const initialChartData = [
   { month: 'January', balance: 1 },
@@ -37,11 +39,11 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function Chart() {
+  const { received } = useMe();
   const [period, setPeriod] = useState('1H');
   const [chartData, setChartData] = useState(initialChartData);
 
   useEffect(() => {
-    const initialDelay = 0;
     const animationDuration = 4000;
     const steps = 244;
     const stepDuration = animationDuration / steps;
@@ -61,12 +63,17 @@ export function Chart() {
       }
     };
 
-    // Add initial delay before starting animation
-    const timeoutId = setTimeout(animate, initialDelay);
+    let timeoutId: NodeJS.Timeout;
+    if (received) {
+      animate();
+    }
 
-    // Cleanup timeout on unmount or when period changes
-    return () => clearTimeout(timeoutId);
-  }, []); // Restart animation when period changes
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [received]);
 
   return (
     <div className="flex h-[35vh] flex-col items-center justify-center ">

@@ -29,13 +29,15 @@ export function NotStaked() {
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
-  const { me, balances, updateBalances } = useMe();
-  const [stakeEnabled, setStakeEnabled] = useState(false);
+  const { me, balances, updateBalances, received } = useMe();
 
   useEffect(() => {
-    if (balances.balance !== '0' && stakeEnabled) setOpen(true);
-    else setOpen(false);
-  }, [balances.balance, stakeEnabled]);
+    if (received) {
+      setTimeout(() => {
+        setOpen(true);
+      }, 4500);
+    }
+  }, [received]);
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
@@ -76,19 +78,7 @@ export function NotStaked() {
             <h1 className="text-center text-2xl font-bold">Success!</h1>
             <AlertDialogFooter>
               <AlertDialogCancel>
-                <Button
-                  className="h-12 w-full text-xl"
-                  flat
-                  onClick={() =>
-                    Transaction(
-                      me!,
-                      balances.balance,
-                      'supply',
-                      setIsLoading,
-                      updateBalances,
-                      setSuccess
-                    )
-                  }>
+                <Button className="h-12 w-full text-xl" flat>
                   Close
                 </Button>
               </AlertDialogCancel>
@@ -100,19 +90,7 @@ export function NotStaked() {
             <h1 className="text-center text-2xl font-bold">An error occurred</h1>
             <AlertDialogFooter>
               <AlertDialogCancel>
-                <Button
-                  className="h-12 w-full text-xl"
-                  flat
-                  onClick={() =>
-                    Transaction(
-                      me!,
-                      balances.balance,
-                      'supply',
-                      setIsLoading,
-                      updateBalances,
-                      setSuccess
-                    )
-                  }>
+                <Button className="h-12 w-full text-xl" flat>
                   Close
                 </Button>
               </AlertDialogCancel>
