@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://kuma-hedera.vercel.app/favicon.ico" width="100"/>
+<img src="https://kuma-app.vercel.app/favicon.ico" width="100"/>
 <h1 align="center" style="margin-bottom: 0">KUMA</h1>
 <p align="center">Kuma is an ERC-4337 Smart Wallet controlled with WebAuthn</a></p>
 </div>
@@ -20,25 +20,37 @@ It allows users to create a wallet on the blockchain with a web2 experience.
 - Transaction Batching
 - Wallet Recovery with Guardians
 
+# Code
+
+### Contracts
+
+This folder contains the smart contracts of the wallet.
+
+### Kuma File
+
+This folder contains the app.
+
 # Smart Contracts
 
-## Supported Chains
-
-- Hedera
-
-## [EntryPoint](https://hashscan.io/testnet/contract/0.0.4755335)
+### [EntryPoint](https://hashscan.io/testnet/contract/0.0.4755335)
 
 ```
 0x48d2642087dd86f86ed205ab204fd10a5cb076f8
 ```
 
-## [Factory](https://hashscan.io/testnet/contract/0.0.4755395)
+### [Factory](https://hashscan.io/testnet/contract/0.0.4755395)
 
 ```
 0xc71a8181b63dcb39015e05391747d8de505f37ba
 ```
 
-## [Paymaster](https://hashscan.io/testnet/contract/0.0.4755408)
+### [Paymaster](https://hashscan.io/testnet/contract/0.0.4755408)
+
+```
+0xd0a0dccc866b650a2db92434bc3ded773f417d2e
+```
+
+### [P256 Verifier](https://hashscan.io/testnet/contract/0.0.4755408)
 
 ```
 0xd0a0dccc866b650a2db92434bc3ded773f417d2e

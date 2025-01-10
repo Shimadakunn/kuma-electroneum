@@ -10,6 +10,7 @@ import { useMe } from '@/providers';
 
 import Home from '@/app/home/page';
 import Login from '@/app/login/page';
+import { Toaster } from '@/components/ui/toaster';
 
 type UseSmartWallet = ReturnType<typeof useSmartWalletHook>;
 
@@ -35,7 +36,8 @@ export function SmartWalletProvider({ children }: { children: React.ReactNode })
   return (
     <WagmiConfig config={wagmiConfig}>
       <SmartWalletContext.Provider value={smartWalletValue}>
-        {!isMounted ? null : me ? <Home /> : <Login />}
+        {!isMounted ? <>Not Mounted</> : me ? <Home /> : <Login />}
+        <Toaster />
       </SmartWalletContext.Provider>
     </WagmiConfig>
   );
