@@ -6,6 +6,13 @@
 
 <a href="https://kuma-hedera.vercel.app/" target="_blank" style="font-size: 32px;">Demo Site</a>
 
+<div align="center">
+  <a href="https://youtube.com/shorts/zV-sOk5zlfI">
+    <img src="https://img.youtube.com/vi/zV-sOk5zlfI/maxresdefault.jpg" width="400" alt="Demo Video"/>
+  </a>
+  <p><i>Click to watch the demo video</i></p>
+</div>
+
 # Pain Point
 
 Wallets on Electroneum Blockchain are all EOA and are not shaped to onboard the next 1 billions users.
@@ -24,15 +31,13 @@ It allows users to create a wallet on the blockchain with a web2 experience.
 
 # Code
 
-### Contracts
+### contracts folder
 
 The smart contracts are based on the [ERC-4337 standard](https://github.com/eth-infinitism/account-abstraction).
 
 The implementation of the WebAuthn signature verification is based on the [Daimo](https://github.com/daimo-eth/p256-verifier) implementation.
 
 The bundler is based on the [Alchemy Rundler](https://github.com/alchemyplatform/rundler).
-
-#### Setup
 
 ```bash
 git submodule update --init --recursive
@@ -46,7 +51,7 @@ Then setup the `.env` file with the correct values.
 source deploy/[contract].sh
 ```
 
-### kuma
+### kuma folder
 
 ```bash
 cd kuma
