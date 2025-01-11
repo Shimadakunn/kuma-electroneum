@@ -4,14 +4,15 @@
 <p align="center">Kuma is an ERC-4337 Smart Wallet controlled with WebAuthn</a></p>
 </div>
 
-<a href="https://kuma-hedera.vercel.app/" target="_blank" style="font-size: 32px;">Demo Site</a>
-
 <div align="center">
+ 
   <a href="https://youtube.com/shorts/zV-sOk5zlfI">
     <img src="https://img.youtube.com/vi/zV-sOk5zlfI/maxresdefault.jpg" width="400" alt="Demo Video"/>
   </a>
   <p><i>Click to watch the demo video</i></p>
 </div>
+
+<a href="https://kuma-hedera.vercel.app/" target="_blank" style="font-size: 32px;">Demo Site</a>
 
 # Pain Point
 
